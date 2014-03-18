@@ -4,4 +4,9 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+
+  def call_for_papers
+    
+  end
+  
 end
