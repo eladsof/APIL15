@@ -1,7 +1,13 @@
 Apilsite::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/call_for_papers"
+  
+  root to: 'static_pages#home'
+
+  match 'signup', to: 'users#new'
+  
+  match 'home', to: 'static_pages/home'
+  match 'help', to: 'static_pages/help'
+  match 'cfp', to: 'static_pages/call_for_papers'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
