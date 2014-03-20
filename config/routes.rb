@@ -2,11 +2,11 @@ Apilsite::Application.routes.draw do
   
   root to: 'static_pages#home'
 
-  match 'signup', to: 'users#new'
+  match 'signup', to: 'users#new', via: [:get, :post]
   
-  match 'home', to: 'static_pages/home'
-  match 'help', to: 'static_pages/help'
-  match 'cfp', to: 'static_pages/call_for_papers'
+  match 'home', to: 'static_pages/home', via: [:get, :post]
+  match 'help', to: 'static_pages/help', via: [:get, :post]
+  match 'cfp', to: 'static_pages/call_for_papers', via: [:get, :post]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
