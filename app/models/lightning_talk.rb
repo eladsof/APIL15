@@ -1,0 +1,2 @@
+class LightningTalk < Talk
+end

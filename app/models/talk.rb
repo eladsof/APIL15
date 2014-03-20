@@ -1,0 +1,2 @@
+class Talk < Session
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  about: 
+  link: 
+  sponsorship_type: 1
+
+two:
+  name: 
+  about: 
+  link: 
+  sponsorship_type: 1
