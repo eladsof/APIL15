@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Users" do
 
 	describe "Basic user works fine" do
-	  before {@user = User.new(name:'Test User', email:'Test@User.com', password:'123456', password_confirmation:'123456')}
+	  before {@user = User.create!(name:'Test User', email:'Test@User.com', password:'123456', password_confirmation:'123456')}
   
   	subject {@user}
   

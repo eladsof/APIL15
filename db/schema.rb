@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320105438) do
+ActiveRecord::Schema.define(version: 20140320195244) do
+
+  create_table "reviewers_sessionsinreviews", force: true do |t|
+    t.integer "reviewer_id"
+    t.integer "sessions_in_review_id"
+  end
 
   create_table "sessions", force: true do |t|
     t.string   "title"
@@ -19,6 +24,8 @@ ActiveRecord::Schema.define(version: 20140320105438) do
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "speaker_id"
+    t.string   "type"
   end
 
   create_table "sponsors", force: true do |t|
@@ -37,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140320105438) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
   end
 
 end

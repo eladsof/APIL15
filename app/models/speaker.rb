@@ -1,3 +1,3 @@
 class Speaker < User
-	has_many: Session
+	has_many :session
 end
