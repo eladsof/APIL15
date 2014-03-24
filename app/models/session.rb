@@ -1,6 +1,3 @@
 class Session < ActiveRecord::Base
-	belongs_to :speaker
-	validates :speaker_id, presence: true
-	validates :title, presence: true, length: {maximum: 30}
-	validates :abstract, presence: true
+	belongs_to :speaker, :class_name => 'User', :foreign_key => 'speaker_id'
 end

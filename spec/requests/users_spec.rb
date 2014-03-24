@@ -1,15 +1,18 @@
 require 'spec_helper'
-
 describe "Users" do
-
 	describe "Basic user works fine" do
-	  before {@user = User.create!(name:'Test User', email:'Test@User.com', password:'123456', password_confirmation:'123456')}
+		
+		
+	  before { 
+	  	@user = User.create!(name: 'Test User', email: 'Test@User.com', password: '123456', password_confirmation: '123456' ) 
+	  }
   
-  	subject {@user}
-  
-	  it { should respond_to(:name) }
-	  it { should respond_to(:email) }
-		it { should be_valid }
+  	it "should be ok" do
+		  expect(@user).should respond_to(:name)
+	  	expect(@user).should respond_to(:email) 
+		  expect(@user.can_submit_talk?).to be_true
+			expect(@user).to be_valid 
+		end
 	end
 	
 	describe "Passwords" do

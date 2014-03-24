@@ -11,40 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320195244) do
-
-  create_table "reviewers_sessionsinreviews", force: true do |t|
-    t.integer "reviewer_id"
-    t.integer "sessions_in_review_id"
-  end
+ActiveRecord::Schema.define(version: 20140324082835) do
 
   create_table "sessions", force: true do |t|
-    t.string   "title"
+    t.string   "name"
     t.text     "abstract"
-    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "speaker_id"
-    t.string   "type"
   end
 
-  create_table "sponsors", force: true do |t|
-    t.string   "name"
-    t.text     "about"
-    t.text     "link"
-    t.integer  "sponsorship_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "user_permissions", force: true do |t|
+    t.boolean "speaker",  default: true
+    t.boolean "reviewer", default: false
+    t.boolean "admin",    default: false
+    t.integer "user_id"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "phone_number"
-    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type"
+    t.string   "password_digest"
   end
 
 end
